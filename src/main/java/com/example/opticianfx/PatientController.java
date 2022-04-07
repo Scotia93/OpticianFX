@@ -20,7 +20,7 @@ import java.io.IOException;
 
 public class PatientController
 {
-    private OpticianModel model  = new OpticianModel();
+    private OpticianModel model;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -32,7 +32,11 @@ public class PatientController
 
     public void switchToWelcome(ActionEvent event) throws IOException
     {
-        root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+        FXMLLoader welcomeLoader = new FXMLLoader(getClass().getResource("Welcome.fxml")); // new bit
+        Parent root = welcomeLoader.load();
+        WelcomeFXController welcomeController = welcomeLoader.getController();
+        welcomeController.initModel(this.model);
+//        root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

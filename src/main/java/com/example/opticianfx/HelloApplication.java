@@ -1,6 +1,7 @@
 package com.example.opticianfx;
 
 import com.example.optician.OpticianModel;
+import com.example.optician.Patient;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,8 +17,10 @@ public class HelloApplication extends Application {
     private OpticianModel model = new OpticianModel();
     @Override
     public void start(Stage stage) throws IOException {
-//        passModels();
-        Parent root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+        FXMLLoader welcomeLoader = new FXMLLoader(getClass().getResource("Welcome.fxml"));
+        Parent root = welcomeLoader.load();
+        WelcomeFXController welcomeFxController = welcomeLoader.getController();
+        welcomeFxController.initModel(this.model);
         Scene scene = new Scene(root);
         stage.setTitle("Welcome!");
         stage.getIcons().add(new Image(getClass().getResourceAsStream("GCU.png")));

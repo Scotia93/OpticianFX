@@ -1,5 +1,6 @@
 package com.example.opticianfx;
 
+import com.example.optician.OpticianModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,10 +20,17 @@ public class WelcomeFXController
     private Scene scene;
     private Parent root;
 
+    private OpticianModel model;
+
 
     public void switchToPatient(ActionEvent event) throws IOException
     {
-        root = FXMLLoader.load(getClass().getResource("Patient.fxml"));
+        FXMLLoader patientLoader = new FXMLLoader(getClass().getResource("Patient.fxml")); // new bit
+        Parent root = patientLoader.load();
+        PatientController patientController = patientLoader.getController();
+        patientController.initModel(this.model);
+
+//           root = FXMLLoader.load(getClass().getResource("Patient.fxml")); // old bit
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setTitle("Patient Registration");
@@ -51,6 +59,10 @@ public class WelcomeFXController
         stage.setResizable(false);
         stage.setTitle("Assign Optician");
         stage.show();
+    }
+
+    public void initModel(OpticianModel model) {
+        this.model = model;
     }
 
     @FXML
