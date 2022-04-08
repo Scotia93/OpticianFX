@@ -25,6 +25,7 @@ public class WelcomeFXController
 
     public void switchToPatient(ActionEvent event) throws IOException
     {
+
         FXMLLoader patientLoader = new FXMLLoader(getClass().getResource("Patient.fxml")); // new bit
         Parent root = patientLoader.load();
         PatientController patientController = patientLoader.getController();

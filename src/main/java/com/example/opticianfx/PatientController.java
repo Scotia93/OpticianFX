@@ -52,10 +52,13 @@ public class PatientController
         String Address = textAddress.getText();
         String ContactNumber = textContactNumber.getText();
         String Email = textEmail.getText();
+
         Patient patient = new Patient(Firstname, Lastname, Address, ContactNumber, Email);
         System.out.println(patient);
+
         this.model.patients.add(patient);
         System.out.println(model);
+
         PrintArea.setText(model.FormattedPatientString());
     }
 
