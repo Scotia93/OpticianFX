@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,7 +22,8 @@ public class HelloApplication extends Application {
         Parent root = welcomeLoader.load();
         WelcomeFXController welcomeFxController = welcomeLoader.getController();
         welcomeFxController.initModel(this.model);
-        Scene scene = new Scene(root);
+
+        Scene scene = new Scene(root, Color.DODGERBLUE);
         stage.setTitle("Welcome!");
         stage.getIcons().add(new Image(getClass().getResourceAsStream("GCU.png")));
         stage.setResizable(true);

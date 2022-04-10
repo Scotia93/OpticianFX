@@ -18,7 +18,7 @@ public class OpticianModel
         Patient patient = new Patient("Scott",
 
                 "Adams", "31 Craigpark Drive", "07446965944", "scottadams@gmail.com");
-        Optician optician = new Optician ("Andrew","Allan","10 Glasgow Road","01419461234","gcuoptician@ac.uk",new Date() ,1);
+        Optician optician = new Optician ("Andrew","Allan","10 Glasgow Road","01419461234","gcuoptician@ac.uk",new Date() ,"1");
 
 
         //register patient
@@ -26,11 +26,11 @@ public class OpticianModel
         System.out.println(model.patients);
 
         // make initial appointment
-        patient.makeFirstAppointment(new Date(),10, "Check up", optician);
+        patient.makeFirstAppointment(new Date(),"10", "Check up");
         System.out.println(model.patients);
 
         // come back for another appointment
-        patient.makeAdditionalAppointment(new Date(),10, "Eye Test", optician);
+        patient.makeAdditionalAppointment(new Date(),"10", "Eye Test");
         System.out.println(model.patients);
 
         // finish treatment

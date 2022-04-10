@@ -7,15 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.opticianfx.AppointmentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.opticianfx.AppointmentController">
    <children>
-      <Label layoutX="153.0" layoutY="14.0" text="Book an Appointment">
+      <Label layoutX="278.0" layoutY="14.0" text="Book an Appointment">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="14.0" layoutY="451.0" mnemonicParsing="false" onAction="#switchToOptician" text="Back">
+      <Button fx:id="HomeButton" layoutX="14.0" layoutY="701.0" mnemonicParsing="false" onAction="#switchToWelcome" text="Home">
          <font>
             <Font size="16.0" />
          </font>
@@ -25,24 +24,35 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="274.0" layoutY="76.0" />
+      <TextField fx:id="textService" layoutX="495.0" layoutY="76.0" />
       <Label layoutX="63.0" layoutY="129.0" text="Duration">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="274.0" layoutY="129.0" />
+      <TextField fx:id="textDuration" layoutX="495.0" layoutY="129.0" />
       <Label layoutX="64.0" layoutY="188.0" text="Optician">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="274.0" layoutY="188.0" />
-      <DatePicker fx:id="myDatePicker" layoutX="163.0" layoutY="272.0" onAction="#getDate" promptText="Select appointment date" />
-      <Label fx:id="myLabel" layoutX="249.0" layoutY="335.0">
+      <TextField fx:id="textOptician" layoutX="495.0" layoutY="188.0" />
+      <DatePicker fx:id="myDatePicker" layoutX="282.0" layoutY="330.0" onAction="#getDate" prefHeight="41.0" prefWidth="186.0" promptText="Select appointment date" />
+      <Label fx:id="myLabel" layoutX="265.0" layoutY="238.0" prefHeight="53.0" prefWidth="230.0" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
+      <Button fx:id="Book" layoutX="296.0" layoutY="701.0" mnemonicParsing="false" onAction="#BookAppointment" text="Initial Appointment">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="ExtraAppointment" layoutX="548.0" layoutY="701.0" mnemonicParsing="false" onAction="#BookAdditionalAppointment" text="Additional Appointment">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label fx:id="PrintArea" layoutX="1.0" layoutY="436.0" prefHeight="205.0" prefWidth="750.0" textAlignment="CENTER" />
    </children>
 </AnchorPane>

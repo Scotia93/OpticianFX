@@ -26,11 +26,11 @@ public class Patient
 
 
     // Method to make initial appointment
-    public void makeFirstAppointment(Date date, int duration, String service, Optician optician)
+    public void makeFirstAppointment(Date date, String duration, String service)
     {
         if (this.appointment == null)
         {
-            this.appointment = new Appointment(date,duration,service,optician);
+            this.appointment = new Appointment(date,duration,service);
             this.TreatmentStatus = "Pending";
         }
         else
@@ -40,9 +40,9 @@ public class Patient
     }
 
 //     Method to Make additional appointments
-    public void makeAdditionalAppointment(Date date, int duration, String service, Optician optician)
+    public void makeAdditionalAppointment(Date date, String duration, String service)
     {
-        this.appointment = new Appointment(date,duration,service,optician);
+        this.appointment = new Appointment(date,duration,service);
         this.TreatmentStatus = "Ongoing";
     }
 

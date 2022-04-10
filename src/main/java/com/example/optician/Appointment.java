@@ -1,27 +1,25 @@
 package com.example.optician;
 import java.util.Date;
-import java.text.SimpleDateFormat;
 
 public class Appointment
 {
     public Date date;
-    public int duration;
+    public String duration;
     public String service;
-    public Optician optician;
+
 //    Constructor for class Appointment
-    public Appointment(Date date, int duration, String service, Optician optician)
+    public Appointment(Date date, String duration, String service)
     {
         this.date = date;
         this.duration = duration;
         this.service = service;
-        this.optician = optician;
+
     }
-//    Getter Methods
-    public Optician getOptician()
-    {
-        return optician;
-    }
-    public int getDuration()
+
+
+    //    Getter Methods
+
+    public String getDuration()
     {
         return duration;
     }
@@ -40,7 +38,6 @@ public class Appointment
                 "date=" + date +
                 ", duration=" + duration +
                 ", service='" + service + '\'' +
-                ", optician=" + optician +
                 '}';
     }
 }

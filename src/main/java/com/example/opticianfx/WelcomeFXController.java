@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -40,22 +41,27 @@ public class WelcomeFXController
         stage.show();
     }
 
-    public void switchToWelcome(ActionEvent event) throws IOException
-    {
-        root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setTitle("Welcome!");
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
-    }
+//    public void switchToWelcome(ActionEvent event) throws IOException
+//    {
+//        root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+//        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//        scene = new Scene(root);
+//        stage.setTitle("Welcome!");
+//        stage.setResizable(false);
+//        stage.setScene(scene);
+//        stage.show();
+//    }
 
     public void switchToOptician(ActionEvent event) throws IOException
     {
-        root = FXMLLoader.load(getClass().getResource("Optician.fxml"));
+        FXMLLoader opticianLoader = new FXMLLoader(getClass().getResource("Optician.fxml")); // new bit
+        Parent root = opticianLoader.load();
+        OpticianController opticianController = opticianLoader.getController();
+        opticianController.initModel(this.model);
+
+//        root = FXMLLoader.load(getClass().getResource("Optician.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        scene = new Scene(root, Color.DODGERBLUE);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setTitle("Assign Optician");

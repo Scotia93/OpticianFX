@@ -11,7 +11,7 @@ public class Optician
     public String ContactNumber;
     public String Email;
     public Date StartDate;
-    public int RoomNumber;
+    public String RoomNumber;
     public int OpticianID;
     private static int opticianIDInstances = 0;
     private static int opticianEndDate;
@@ -19,17 +19,20 @@ public class Optician
 
 
 //    Constructor for optician class
-    public Optician(String Firstname, String Lastname, String Address, String ContactNumber, String Email, Date StartDate, int RoomNumber)
+    public Optician(String Firstname, String Lastname, String Address, String ContactNumber, String Email, Date StartDate, String RoomNumber)
     {
         this.Firstname = Firstname;
         this.Lastname = Lastname;
         this.Address = Address;
         this.ContactNumber = ContactNumber;
         this.Email = Email;
-        this.StartDate = StartDate;
+        this.StartDate = new Date();
         this.RoomNumber = RoomNumber;
         OpticianID();
+    }
 
+    public Optician()
+    {
 
     }
 
@@ -65,10 +68,11 @@ public class Optician
     {
         return StartDate;
     }
-    public int getRoomNumber()
+    public String getRoomNumber()
     {
         return RoomNumber;
     }
+
 // Setters
 
     public void setFirstname(String firstname)
@@ -95,7 +99,7 @@ public class Optician
     {
         StartDate = startDate;
     }
-    public void setRoomNumber(int roomNumber)
+    public void setRoomNumber(String roomNumber)
     {
         RoomNumber = roomNumber;
     }
@@ -104,7 +108,9 @@ public class Optician
     public String toString()
     {
         return "Optician{" +
-                "name='" + Firstname + '\'' +
+                "name='" + Firstname + " " + Lastname +  '\'' +
+                ", Email address is " + Email + '\'' +
+                ", and Room number is " + RoomNumber + '\'' +
                 '}';
     }
 }

@@ -64,13 +64,35 @@ public class PatientController
 
     public void switchToOptician(ActionEvent event) throws IOException
     {
-        root = FXMLLoader.load(getClass().getResource("Optician.fxml"));
+        FXMLLoader opticianLoader = new FXMLLoader(getClass().getResource("Optician.fxml")); // new bit
+        Parent root = opticianLoader.load();
+        OpticianController opticianController = opticianLoader.getController();
+        opticianController.initModel(this.model);
+//        root = FXMLLoader.load(getClass().getResource("Optician.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setTitle("Assign Optician");
         stage.show();
+    }
+
+    public void ViewPatients()
+    {
+        System.out.println(model);
+        System.out.println(this.model.patients);
+        PrintArea.setText(String.valueOf(this.model.patients));
+    }
+
+    public void CompleteTreatment()
+    {
+//        if(model.patients.contains(textTarget.getText()))
+//        {
+//            Patient patient = model.patients.get(0);
+//            patient.finishTreatment();
+//        }
+        Patient patient = model.patients.get(0);
+        patient.finishTreatment();
     }
 
 
@@ -105,4 +127,10 @@ public class PatientController
     private Button AddButton;
     @FXML
     private Label PrintArea;
+    @FXML
+    private Button ViewStatus;
+    @FXML
+    private TextField textTarget;
+    @FXML
+    private Button Complete;
 }
