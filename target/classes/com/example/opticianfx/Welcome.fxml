@@ -7,12 +7,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.opticianfx.WelcomeFXController">
    <children>
-      <Label fx:id="welcometext" layoutX="122.0" layoutY="91.0" text="Welcome to GCU Opticians!">
+      <Label fx:id="welcometext" layoutX="122.0" layoutY="91.0" opacity="0.99" text="Welcome to GCU Opticians!">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="StartButton" layoutX="316.0" layoutY="205.0" mnemonicParsing="false" onAction="#switchToPatient" text="Create Patient">
+      <Button fx:id="StartButton" layoutX="329.0" layoutY="202.0" mnemonicParsing="false" onAction="#switchToPatient" text="Patients">
          <font>
             <Font size="16.0" />
          </font></Button>

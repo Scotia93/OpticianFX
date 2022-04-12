@@ -38,7 +38,7 @@
       </Label>
       <TextField fx:id="textOptician" layoutX="495.0" layoutY="188.0" />
       <DatePicker fx:id="myDatePicker" layoutX="282.0" layoutY="330.0" onAction="#getDate" prefHeight="41.0" prefWidth="186.0" promptText="Select appointment date" />
-      <Label fx:id="myLabel" layoutX="265.0" layoutY="238.0" prefHeight="53.0" prefWidth="230.0" textAlignment="CENTER">
+      <Label fx:id="myLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="265.0" layoutY="238.0" prefHeight="53.0" prefWidth="230.0" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>
@@ -53,6 +53,9 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Label fx:id="PrintArea" layoutX="1.0" layoutY="436.0" prefHeight="205.0" prefWidth="750.0" textAlignment="CENTER" />
+      <Label fx:id="PrintArea" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="436.0" prefHeight="205.0" prefWidth="750.0" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
    </children>
 </AnchorPane>

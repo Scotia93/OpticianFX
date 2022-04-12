@@ -58,9 +58,9 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Label fx:id="PrintArea" layoutX="1.0" layoutY="296.0" prefHeight="199.0" prefWidth="750.0" textAlignment="CENTER">
+      <Label fx:id="PrintArea" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="296.0" prefHeight="199.0" prefWidth="750.0" textAlignment="CENTER">
          <font>
-            <Font size="11.0" />
+            <Font size="10.0" />
          </font></Label>
       <Button fx:id="ViewStatus" layoutX="433.0" layoutY="701.0" mnemonicParsing="false" onAction="#ViewPatients" text="View Patients">
          <font>
